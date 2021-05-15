@@ -1,5 +1,9 @@
 package ua.nure.danylenko.practice2;
 
+import java.util.Arrays;
+import java.util.function.Consumer;
+import java.util.function.Function;
+
 public class ArrayTask {
 
 
@@ -17,10 +21,15 @@ public class ArrayTask {
 
         int[] t4 = {-20, 10, 3, 9, 8};
 
-        System.out.println(maximumProduct(t1));
-        System.out.println(maximumProduct(t2));
-        System.out.println(maximumProduct(t3));
-        System.out.println(maximumProduct(t4));
+//        System.out.println(maximumProduct(t1));
+//        System.out.println(maximumProduct(t2));
+//        System.out.println(maximumProduct(t3));
+//        System.out.println(maximumProduct(t4));
+
+        System.out.println(maximumProduct2(t1));
+        System.out.println(maximumProduct2(t2));
+        System.out.println(maximumProduct2(t3));
+        System.out.println(maximumProduct2(t4));
 
     }
 
@@ -37,4 +46,18 @@ public class ArrayTask {
         }
         return maxProd;
     }
+
+    private static int maximumProduct2(int[] arr){
+        int maxProd =0;
+        for(int i=0; i<arr.length; i++){
+            for(int j=i+1; j<arr.length; j++) {
+               if(arr[i]*arr[j]>maxProd){
+                   maxProd=arr[i]*arr[j];
+               }
+            }
+        }
+        return maxProd;
+    }
+
+
 }
